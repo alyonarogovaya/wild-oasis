@@ -11,7 +11,7 @@ module.exports = {
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
-  plugins: ["react-refresh", "styled-components-a11y"],
+  plugins: ["react-refresh", "styled-components-a11y", "query"],
   rules: {
     "react/jsx-no-target-blank": "off",
     "react-refresh/only-export-components": [
