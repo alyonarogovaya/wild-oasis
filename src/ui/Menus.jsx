@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiEllipsisVertical } from "react-icons/hi2";
 import styled from "styled-components";
@@ -73,6 +73,26 @@ function Menus({ children }) {
 
   const close = () => setOpenId("");
   const open = setOpenId;
+
+  useEffect(() => {
+    const main = document.querySelector("main");
+    const root = document.querySelector("#root");
+    if (openId !== "") {
+      document.body.style.overflow = "hidden";
+      main.style.overflow = "hidden";
+      root.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      main.style.overflow = "";
+      root.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      main.style.overflow = "";
+      root.style.overflow = "";
+    };
+  }, [openId]);
 
   return (
     <MenusContext.Provider
