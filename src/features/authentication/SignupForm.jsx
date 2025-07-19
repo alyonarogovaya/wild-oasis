@@ -6,14 +6,17 @@ import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
 
 function SignupForm() {
-  const {signup, isLoading} = useSignup()
+  const { signup, isLoading } = useSignup();
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
-  function onSubmit({fullName, email, password}) {
-    signup({fullName, email, password}, {
-      onSettled: () => reset()
-    })
+  function onSubmit({ fullName, email, password }) {
+    signup(
+      { fullName, email, password },
+      {
+        onSettled: () => reset(),
+      }
+    );
   }
 
   return (
@@ -74,7 +77,12 @@ function SignupForm() {
       </FormRow>
 
       <FormRow>
-        <Button variation="secondary" type="reset" disabled={isLoading}>
+        <Button
+          variation="secondary"
+          onClick={reset}
+          type="reset"
+          disabled={isLoading}
+        >
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>
