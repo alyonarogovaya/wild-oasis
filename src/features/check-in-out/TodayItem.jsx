@@ -28,7 +28,6 @@ function TodayItem({ activity }) {
   const { id, status, guests, numNights } = activity;
   const isUnconfirmed = status === "unconfirmed";
   const isCheckedIn = status === "checked-in";
-  console.log(activity);
 
   return (
     <StyledTodayItem>
