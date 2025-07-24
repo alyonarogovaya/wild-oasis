@@ -59,11 +59,6 @@ To explore the app, use the following credentials:
 ## 📂 Project Structure (Simplified)
 
 ```
----
-
-## 📂 Project Structure (Simplified)
-
-```
 src/
 ├── context/            # React context providers 
 ├── data/               # Static data
